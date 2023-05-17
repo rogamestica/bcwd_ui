@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'Roboto Regular';
+    src: url('../roboto-font/Roboto-Regular.ttf') format('truetype');
+}
+
+li {
+    font-size: 14px;
+    font-family: 'Roboto Regular';
+}
+
+.link {
+    color: #118DF0 !important;
+}
+
+.link1 {
+    color: #545454 !important;
+}

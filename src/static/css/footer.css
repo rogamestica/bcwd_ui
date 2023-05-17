@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'Roboto Light';
+    src: url('../roboto-font/Roboto-Light.ttf') format('truetype');
+}
+
+.footer {
+    font-size: 14px;
+    color: #ffffff !important;
+    font-family: 'Roboto Light', sans-serif;
+    text-decoration: none;
+  }
+  
+.link-tag {
+    color: #fffdfd;
+    font-size: 14px;
+    text-align: left;
+    text-decoration: none;
+    font-family: 'Roboto Light', sans-serif;
+    text-decoration: none;
+    font-family: 'Roboto Light', sans-serif;
+}

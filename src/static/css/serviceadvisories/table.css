@@ -1,0 +1,17 @@
+/* bcwd_ui\src\static\css\serviceadvisories\table.css */
+
+
+@font-face {
+    font-family: 'Roboto Light';
+    src: url('../../roboto-font/Roboto-Light.ttf') format('truetype');
+}
+
+th {
+    font-size: 13px;
+    font-family: "Roboto Light";
+}
+
+td {
+    font-size: 12px;
+    font-family: "Roboto Light";
+}

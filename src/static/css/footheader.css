@@ -1,0 +1,30 @@
+.element-class-footer {
+    position: relative;
+}
+
+.element-class-footer:before,
+.element-class:after {
+    content: '';
+    display: block;
+    position: absolute;
+    background-color: transparent;
+    pointer-events: none;
+}
+
+.element-class-footer:before {
+    top: 0;
+    left: 0;
+    right: 70%;
+    bottom: 100%;
+    border-top: 4px solid #ffffff;
+    border-left: 4px solid #ffffff;
+}
+
+
+.myheader-footer {
+    font-size: 24px;
+    font-weight: bolder;
+    color: #ffffff;
+    text-align: left;
+    font-family: 'Roboto';
+}

@@ -1,0 +1,46 @@
+.navbar-nav .nav-link {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.my-water-bill-btn {
+  margin-left: 1rem;
+}
+
+@font-face {
+  font-family: 'Roboto Light';
+  src: url('../roboto-font/Roboto-Light.ttf') format('truetype');
+}
+
+/* body {
+  font-family: 'Roboto Black', sans-serif;
+} */
+
+.my-link {
+  color: #3f3e3e;
+  text-decoration: none;
+  font-family: 'Roboto Light', sans-serif;
+}
+
+.dropdown {
+  border-radius: 0;
+}
+
+.banner {
+  padding: 0;
+  margin: 0;
+  height: 20rem;
+  background-image: linear-gradient(71deg,
+      rgba(58, 121, 184, 0.664) 45%,
+      rgba(21, 64, 134, 0.24) 100%), url('../img/banner.png');
+  font-family: 'roboto', sans-serif;
+}
+
+.navbar-nav .nav-link {
+  padding: 10px;
+  border-radius: 0;
+}
+
+.navbar-nav .dropdown-menu {
+  border-radius: 0;
+}

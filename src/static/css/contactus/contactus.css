@@ -1,0 +1,59 @@
+.container.mytext{
+    margin: 10px;
+    border-radius: 10px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(17, 141, 240, 0.87);
+    font-weight: bold;
+}
+
+img {
+    max-width: 50%;
+    max-height: 50%;
+  }
+
+.text{
+    color: white;
+    font-size: xx-large;
+}
+
+.faq-item {
+    display: flex;
+    align-items: center;
+  }
+
+  .icon {
+    display: inline-block;
+    width: 40px;
+    height: 60px;
+    margin-right: 10px;
+  }
+
+.container.mytext2{
+    background-color: white;
+    
+}
+
+.header{
+    text-align: left;
+}
+
+/* Media queries for smaller screens */
+@media (max-width: 768px) {
+    .container.mytext{
+        font-size: medium;
+    }
+}
+
+@media (max-width: 576px) {
+    .container.mytext{
+        font-size: small;
+    }
+    .header{
+        font-size: medium;
+    }
+}

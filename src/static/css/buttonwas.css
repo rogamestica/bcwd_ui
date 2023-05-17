@@ -1,0 +1,15 @@
+.btn-sn {
+    font-size: 0.8rem;
+    font-weight: 700;
+    outline: none;
+    border: none;
+    background-color: rgba(23, 69, 105, 94%);
+    color: aliceblue;
+    padding: 8px 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    -webkit-transition-duration: 0.4s;
+    /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+}

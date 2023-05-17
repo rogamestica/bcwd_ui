@@ -1,0 +1,39 @@
+.element-class {
+    position: relative;
+}
+
+.element-class:before,
+.element-class:after {
+    content: '';
+    display: block;
+    position: absolute;
+    background-color: transparent;
+    pointer-events: none;
+}
+
+.element-class:before {
+    top: 0;
+    left: 0;
+    right: 70%;
+    bottom: 100%;
+    border-top: 4px solid #3f3e3e;
+    border-left: 4px solid #3f3e3e;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../roboto-font/Roboto-Bold.ttf') format('truetype');
+}
+
+/* body {
+    font-family: 'roboto', sans-serif;
+} */
+
+
+.myheader {
+    font-size: 32px;
+    font-weight: bold;
+    color: #3f3e3e;
+    text-align: left;
+    font-family: 'Roboto';
+}
