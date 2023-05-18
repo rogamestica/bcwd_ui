@@ -2,12 +2,23 @@ import React, { useState } from 'react';
 import Banner from "../../components/Banner";
 import Breadcrumb from "../../components/Breadcrumb";
 import { Container } from 'react-bootstrap';
+import BillsPaymentPartners from '../bills_payments/BillsPaymentPartners';
+import PersonalInfo from './PersonalInfo';
 
 const WaterBill = () => {
   const [isSignedIn, setIsSignedIn] = useState(false);
-  const [waterBill, setWaterBill, ] = useState('');
+  const [waterBill, setWaterBill] = useState('');
   const [showPopup, setShowPopup] = useState(false);
   const [isSignOutClicked, setIsSignOutClicked] = useState(false);
+
+  const handleLinkClick = () => {
+    // Redirect to a new page
+    window.location.href = { BillsPaymentPartners };
+  };
+
+  const handleBackPersonalInfo=() =>{
+    window.location.href = {PersonalInfo};
+  }
 
   const handleSignIn = () => {
     setIsSignedIn(true);
@@ -27,29 +38,14 @@ const WaterBill = () => {
   const handlePopupClose = () => {
     setShowPopup(false);
   };
-  
-  const PersonalInfo = () => {
-    // Simulated anonymous personal information
+
+
+  const Accountnumber = () => {
+    const accountnumber = "1234345678";
     const name = "John Doe";
-    const address = "123 Main St";
-    const contact = "555-1234";
 
     return (
-      <div>
-        <h2>Personal Information</h2>
-        <p>Name: {name}</p>
-        <p>Address: {address}</p>
-        <p>Contact: {contact}</p>
-      </div>
-    );
-  };
-
-  const Accountnumber=() => {
-    const accountnumber = "1234345678";
-    const name= "John Doe";
-
-    return(
-      <div>
+      <div style={{fontSize: "10px", fontFamily: "Roboto"}}>
         <h2> Account Information</h2>
         <p>Account Number: {accountnumber}</p>
         <p>Account Name: {name}</p>
@@ -66,8 +62,7 @@ const WaterBill = () => {
     return (
       <div>
         <h2>Sign In</h2>
-        <form>
-          {/* Add input fields for username and password */}
+        <form style={{ marginBottom: "50px" }}>
           <button type="button" onClick={handleSignIn}>
             Display my water bill
           </button>
@@ -77,46 +72,83 @@ const WaterBill = () => {
   };
 
   return (
-    <Container className="mt-4">
+    <Container className="mt-4" style={{ height: '100vh', overflow: 'auto' }}>
       <div>
         {!isSignedIn || isSignOutClicked ? (
           <>
-            <Banner title={"User Profile"} />
-            <Breadcrumb
-              paths={[
-                { name: "Home", url: "/" },
-                { name: "User Profile", url: "/userprof" },
-              ]}
-            />
-            <PersonalInfo />
-            <SignInForm onSignIn={handleSignIn} setShowPopup={setShowPopup} />
-            {showPopup && (
-              <div className="popup">
-                <div className="popup-content">
-                  <span className="close" onClick={handlePopupClose}>
-                    &times;
-                  </span>
-                  <p>Please sign in to continue.</p>
-                </div>
-              </div>
-            )}
+            <div
+              className="position-fixed w-100 h-100"
+              style={{
+                top: 0,
+                left: 0,
+                backgroundColor: "rgba(0, 0, 0, 0.5)",
+                backdropFilter: "blur(8px)",
+                zIndex: 9999,
+              }}
+            >
+              <Container className="position-relative"
+                style={{ zIndex: 10000, background: "white", marginTop: "40px", marginBottom: "40px", height: '100%', overflow: 'auto' }}>
+                <Banner title={"User Profile"} />
+                <Breadcrumb
+                  paths={[
+                    { name: "Home", url: "/" },
+                    { name: "User Profile", url: "/userprof" },
+                  ]}
+                />
+                <PersonalInfo />
+                <SignInForm onSignIn={handleSignIn} setShowPopup={setShowPopup} />
+                {showPopup && (
+                  <div className="popup">
+                    <div className="popup-content">
+                      <span className="close" onClick={handlePopupClose}>
+                        &times;
+                      </span>
+                      <p>Please sign in to continue.</p>
+                    </div>
+                  </div>
+                )}
+              </Container>
+            </div>
           </>
         ) : (
           <>
-            <Banner title={"User Profile"} />
-            <Breadcrumb
-              paths={[
-                { name: "Home", url: "/" },
-                { name: "User Profile", url: "/userprof" },
-              ]}
-            />
-            <Accountnumber/>
-            <div>
-              <h2 style={{ color: "blue", fontWeight: "bold" }}>
-                Welcome, User!
-              </h2>
-              <p>Your water bill: {waterBill}</p>
-              <button onClick={handleSignOut}>Sign Out</button>
+            <div
+              className="position-fixed w-100 h-100"
+              style={{
+                top: 0,
+                left: 0,
+                backgroundColor: "rgba(0, 0, 0, 0.5)",
+                backdropFilter: "blur(8px)",
+                zIndex: 9999,
+              }}
+            >
+              <Container className="position-relative"
+                 style={{ zIndex: 10000, background: "white", marginTop: "40px", marginBottom: "40px", height: '100%', overflow: 'auto' }}>
+                <Banner title={"User Profile"} />
+                <Breadcrumb
+                  paths={[
+                    { name: "Home", url: "/" },
+                    { name: "User Profile", url: "/userprof" },
+                  ]} />
+                <h2 style={{ color: "blue", fontWeight: "bold" }}>
+                  Welcome, BCWD Customers!
+                </h2>
+                <Accountnumber />
+                <div>
+                  <p>Your water bill: {waterBill}</p>
+                  <button onClick={handleSignOut}>Sign Out</button>
+                  <button type="button" href='/personalinfo'  onClick={handleBackPersonalInfo}> Back</button>
+                </div>
+                <div>
+                  <h1 style={{ marginTop: "10px", marginBottom: "30px" }}>You can pay online.</h1>
+                  <p style={{ marginTop: "10px", marginBottom: "50px" }}>
+                    Click: {' '}
+                    <a href='/billspaymentpartners' onClick={handleLinkClick}>
+                      Bill Payment Partners
+                    </a>
+                  </p>
+                </div>
+              </Container>
             </div>
           </>
         )}

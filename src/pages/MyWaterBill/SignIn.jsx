@@ -1,83 +1,4 @@
-// import React, { useState } from "react";
-// import { Container, Form, Button } from "react-bootstrap";
 
-// import Waterbill from './Waterbill';
-
-// const SignIn = () => {
-//   const [billAmount, setBillAmount] = useState(null);
-//   const [signedIn, setSignedIn] = useState(false);
-
-//   const handleSignIn = () => {
-//     // Simulate sign-in logic
-//     setSignedIn(true);
-
-//     // Simulate fetching the water bill from the backend
-//     const fetchedBillAmount = 100; // Replace with your logic to fetch the actual water bill amount
-//     setBillAmount(fetchedBillAmount);
-//   };
-
-//   const [email, setEmail] = useState("");
-//   const [password, setPassword] = useState("");
-
-//   const handleSubmit = (event) => {
-//     event.preventDefault();
-//     // Perform sign-in logic with email and password
-//     // ...
-//   };
-
-//   return (
-//     <Container>
-//         <div className="popup">
-//       <h1>Sign In</h1>
-//       <Form onSubmit={handleSubmit}>
-//         <Form.Group controlId="formEmail">
-//           <Form.Label>Email address</Form.Label>
-//           <Form.Control
-//             type="email"
-//             placeholder="Enter email"
-//             value={email}
-//             onChange={(e) => setEmail(e.target.value)}
-//           />
-//         </Form.Group>
-
-//         <Form.Group controlId="formPassword">
-//           <Form.Label>Password</Form.Label>
-//           <Form.Control
-//             type="password"
-//             placeholder="Password"
-//             value={password}
-//             onChange={(e) => setPassword(e.target.value)}
-//           />
-//         </Form.Group>
-
-//         <Button variant="primary" type="submit">
-//           Sign In
-//         </Button>
-//       </Form>
-//       <div>
-//       {!signedIn ? (
-//         <div>
-//           <h2>Sign In</h2>
-//           <label>
-//             Username:
-//             <input type="text" />
-//           </label>
-//           <label>
-//             Password:
-//             <input type="password" />
-//           </label>
-//           <button onClick={handleSignIn}>Sign In</button>
-//         </div>
-//       ) : (
-//         <Waterbill billAmount={billAmount} />
-//       )}
-//     </div>
-//       </div>
-//     </Container>
-//   );
-// };
-
-// export default SignIn;
 
 import React, { useState } from "react";
 import { Container, Form, Button } from "react-bootstrap";
@@ -109,11 +30,24 @@ const SignIn = () => {
   };
 
   return (
-    <Container>
-      <h1>Sign In</h1>
+    <>
+    <Container >
       {!signedIn ? (
-        <div className="popup">
+        <div
+        className="position-fixed w-100 h-100"
+        style={{
+          top: 0,
+          left: 0,
+          backgroundColor: "rgba(0, 0, 0, 0.5)",
+          backdropFilter: "blur(8px)",
+          zIndex: 9999,
+        }}
+      >
+        <Container className="position-relative d-flex justify-content-center align-items-center" 
+        style={{ zIndex: 10000 , background: "white", marginTop: "20%", width: "50rem"}}>
+      
           <Form onSubmit={handleSubmit}>
+          <h1 style={{fontFamily: "sans-serif", fontWeight:"bold", marginTop: "10px" }}>Sign In</h1>
             <Form.Group controlId="formEmail">
               <Form.Label>Email address</Form.Label>
               <Form.Control
@@ -134,17 +68,20 @@ const SignIn = () => {
               />
             </Form.Group>
 
-            <Button variant="primary" type="submit">
+            <Button variant="primary" type="submit" style={{marginTop: "10px"}}>
               Sign In
             </Button>
-          </Form>
+          </Form> </Container>
+          
         </div>
+
       ) : (
         <div className="fullscreen">
           <UserProf billAmount={billAmount} />
         </div>
-      )}
+      )} 
     </Container>
+    </>
   );
 };
 

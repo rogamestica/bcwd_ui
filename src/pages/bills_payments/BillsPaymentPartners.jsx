@@ -4,6 +4,7 @@ import Banner from "../../components/Banner";
 import Pagination from "../../components/Pagination";
 import Breadcrumb from "../../components/Breadcrumb";
 
+
 import Picture11 from "../../static/img/billpp/Picture11.png";
 import Picture12 from "../../static/img/billpp/Picture12.png";
 import Gcash from "../../static/img/billpp/gcash.jpg";
@@ -36,7 +37,7 @@ const BillsPaymentPartners = () => {
         <Row className="justify-content-center">
           <Col xs={12} md={6}>
             <div className="border-blue p-3 m-2">
-              <p>Mobile.</p>
+              <p>You can pay Via:</p>
               <img
                 src={Picture11}
                 alt="bill"

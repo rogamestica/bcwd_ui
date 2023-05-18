@@ -59,8 +59,9 @@ const Navigation = () => {
                                 <NavDropdown.Item as="div"><Link to="/contactus" className="my-link" >Contact Us</Link></NavDropdown.Item>
                                 <NavDropdown.Item as="div"><Link to="/faqs" className="my-link" >Faqs</Link></NavDropdown.Item>
                             </NavDropdown>
-                            <Button>
-                            <div>
+                            <Button >
+                            <div >
+
                                 <button onClick={openSignInModal}>My Water Bill</button>
 
                                 <div className={`modal ${showSignInModal ? 'show' : ''}`} tabIndex="-1" style={{ display: showSignInModal ? 'block' : 'none' }}>

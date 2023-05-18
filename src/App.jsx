@@ -26,6 +26,7 @@ import Faqs from './pages/contact_us/Faqs';
 
 import SignIn from './pages/MyWaterBill/SignIn';
 import UserProf from './pages/MyWaterBill/UserProf';
+import PersonalInfo from "./pages/MyWaterBill/PersonalInfo";
 
 
 function App() {
@@ -57,6 +58,7 @@ function App() {
             
             <Route path='signin' element={ <SignIn/> } />
             <Route path='userprof' element={ <UserProf/> } />
+            <Route path='personalinfo' element={<PersonalInfo/>}/>
 
             {/* error handler */}
             <Route path='*' element={ <NoPage/> } />
