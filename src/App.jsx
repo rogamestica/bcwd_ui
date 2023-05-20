@@ -26,8 +26,10 @@ import Faqs from './pages/contact_us/Faqs';
 
 import SignIn from './pages/MyWaterBill/SignIn';
 import UserProf from './pages/MyWaterBill/UserProf';
-import PersonalInfo from "./pages/MyWaterBill/PersonalInfo";
+import PersonalInfo from './pages/MyWaterBill/PersonalInfo';
 
+
+import ApplyConnection from './components/ApplyConnection';
 
 function App() {
   return (
@@ -59,6 +61,8 @@ function App() {
             <Route path='signin' element={ <SignIn/> } />
             <Route path='userprof' element={ <UserProf/> } />
             <Route path='personalinfo' element={<PersonalInfo/>}/>
+
+            <Route path="applyconnection" element={<ApplyConnection/>}/>
 
             {/* error handler */}
             <Route path='*' element={ <NoPage/> } />
