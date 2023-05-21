@@ -62,7 +62,7 @@ const Navigation = () => {
                             <Button >
                             <div >
 
-                                <button onClick={openSignInModal}>My Water Bill</button>
+                                <button onClick={openSignInModal}style={{ backgroundColor: 'transparent', color: 'white', border: 'none', padding: '0' }}>My Water Bill</button>
 
                                 <div className={`modal ${showSignInModal ? 'show' : ''}`} tabIndex="-1" style={{ display: showSignInModal ? 'block' : 'none' }}>
                                     <div className="modal-dialog modal-dialog-centered">

@@ -30,6 +30,7 @@ import PersonalInfo from './pages/MyWaterBill/PersonalInfo';
 
 
 import ApplyConnection from './components/ApplyConnection';
+import InquiryForm from './components/InquiryForm';
 
 function App() {
   return (
@@ -62,7 +63,8 @@ function App() {
             <Route path='userprof' element={ <UserProf/> } />
             <Route path='personalinfo' element={<PersonalInfo/>}/>
 
-            <Route path="applyconnection" element={<ApplyConnection/>}/>
+            <Route path='applyconnection' element={<ApplyConnection/>}/>
+            <Route path='inquiryform' element={ <InquiryForm/> } />
 
             {/* error handler */}
             <Route path='*' element={ <NoPage/> } />

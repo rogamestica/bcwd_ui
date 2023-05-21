@@ -29,6 +29,7 @@ const ConnectWithUs = () => {
                     className="m-2"
                     src={facebook}
                     alt="fb"
+                    href="https://www.facebook.com/profile.php?id=100064300855367"
                     width="40"
                     height="40"
                   />
