@@ -17,17 +17,17 @@ const Transparency = () => {
     <>
       <Banner title={"Transparency"} />
       <div className="picture d-flex justify-content-center my-3" >
-        <img className="picture" src={Picture1} alt="huy" style={{width: "100%"}}/>
+        <img className="picture" src={Picture1} alt="huy" style={{width: "100%", height: '400px'}}/>
       </div>
     
-      <div className="symbol" style={{ textAlign: "left", marginLeft: "30px", marginRight: "10px"}}>
-        <h2>Symbolism</h2>
-        <p>
+      <div className="symbol" >
+        <h2 style={{ color: 'black', fontFamily: "Roboto", fontSize: '30px', margin: '50px' }}>Symbolism</h2>
+        <p style={{ color: 'black', fontFamily: "Roboto-regular", fontSize: '20px', margin: '20px' }}>
           A pearl buried inside a tightly-shut shell is practically worthless.
           Government information is a pearl, meant to be shared with the public
           in order to maximize its inherent value.
         </p>
-        <p>
+        <p style={{ color: 'black', fontFamily: "Roboto-regular", fontSize: '20px', margin: '20px' }}>
           The Transparency Seal, depicted by a pearl shining out of an open
           shell, is a symbol of a policy shift towards openness in access to
           government information. On the one hand, it hopes to inspire Filipinos
@@ -35,19 +35,19 @@ const Transparency = () => {
           other, to invite the Filipino citizenry to exercise their right to
           participate in governance.
         </p>
-        <p>
+        <p style={{ color: 'black', fontFamily: "Roboto-regular", fontSize: '20px', margin: '20px' }}>
           This initiative is envisioned as a step in the right direction towards
           solidifying the position of the Philippines as the Pearl of the Orient
           - a shining example for democratic virtue in the region.
         </p>
 
-        <h3>BCWD's Compliance With Transparency Seal</h3>
+        <h3 style={{ color: 'black', fontFamily: "Roboto", fontSize: '30px', margin: '50px' }}>BCWD's Compliance With Transparency Seal</h3>
         <ul>
-          <li onClick={() => handleCategoryClick("Category 1")}>
+          <li onClick={() => handleCategoryClick("Category 1")} style={{ color: 'black', fontFamily: "Roboto-regular", fontSize: '20px', margin: '20px' }} >
           DBM APPROVED BUDGET AND TARGETS
             {selectedCategory === "Category 1" && (
               <ul>
-                <li onClick={() => handleCategoryClick("Category 1")}>
+                <li onClick={() => handleCategoryClick("Category 1")} >
                  APPROVED BUDGET
                     {selectedCategory === "Category 1" && (
                       <ul>
@@ -118,7 +118,7 @@ const Transparency = () => {
               </ul>
             )}
           </li>
-          <li onClick={() => handleCategoryClick("Category 2")}>
+          <li onClick={() => handleCategoryClick("Category 2")} style={{ color: 'black', fontFamily: "Roboto-regular", fontSize: '20px', margin: '20px' }}>
           ANNUAL PROCUREMENT PLAN
             {selectedCategory === "Category 2" && (
               <ul>
@@ -131,7 +131,7 @@ const Transparency = () => {
               </ul>
             )}
           </li>
-          <li onClick={() => handleCategoryClick("Category 3")}>
+          <li onClick={() => handleCategoryClick("Category 3")} style={{ color: 'black', fontFamily: "Roboto-regular", fontSize: '20px', margin: '20px' }}>
             MAJOR PROGRAMS, PROJECTS AND ACTIVITIES, BENEFICIARIES, AND STATUS OF IMPLEMENTATION
             {selectedCategory === "Category 3" && (
               <ul>
@@ -171,7 +171,7 @@ const Transparency = () => {
               </ul>
             )}
           </li>
-          <li onClick={() => handleCategoryClick("Category 4")}>
+          <li onClick={() => handleCategoryClick("Category 4")} style={{ color: 'black', fontFamily: "Roboto-regular", fontSize: '20px', margin: '20px' }}>
             ANNUAL FINANCIAL REPORTS
               {selectedCategory === "Category 4" && (
                 <ul>
@@ -195,7 +195,7 @@ const Transparency = () => {
               </ul>
             )}
           </li>
-          <li onClick={() => handleCategoryClick("Category 6")}>
+          <li onClick={() => handleCategoryClick("Category 6")} style={{ color: 'black', fontFamily: "Roboto-regular", fontSize: '20px', margin: '20px' }}>
           QMS CERTIFICATION
             {selectedCategory === "Category 6" && (
               <ul>
@@ -204,7 +204,7 @@ const Transparency = () => {
               </ul>
             )}
           </li>
-          <li onClick={() => handleCategoryClick("Category 7")}>
+          <li onClick={() => handleCategoryClick("Category 7")} style={{ color: 'black', fontFamily: "Roboto-regular", fontSize: '20px', margin: '20px' }}>
           SYSTEM OF RANKING DELIVERY UNITS
             {selectedCategory === "Category 7" && (
               <ul>
@@ -214,7 +214,7 @@ const Transparency = () => {
               </ul>
             )}
           </li>
-          <li onClick={() => handleCategoryClick("Category 8")}>
+          <li onClick={() => handleCategoryClick("Category 8")} style={{ color: 'black', fontFamily: "Roboto-regular", fontSize: '20px', margin: '20px' }}>
           AGENCY REVIEW AND COMPLIANCE PROCEDURE OF STATEMENTS AND FINANCIAL DISCLOSURES
             {selectedCategory === "Category 8" && (
               <ul>
@@ -223,7 +223,7 @@ const Transparency = () => {
               </ul>
             )}
           </li>
-          <li onClick={() => handleCategoryClick("Category 9")}>
+          <li onClick={() => handleCategoryClick("Category 9")} style={{ color: 'black', fontFamily: "Roboto-regular", fontSize: '20px', margin: '20px' }}>
           FREEDOM OF INFORMATION
             {selectedCategory === "Category 9" && (
               <ul>
@@ -236,9 +236,9 @@ const Transparency = () => {
         </ul>
 
         
-        <h3>Other Good Governance Conditions</h3>
+        <h3 style={{ color: 'black', fontFamily: "Roboto", fontSize: '30px', margin: '50px' }}>Other Good Governance Conditions</h3>
         <ul>
-          <li onClick={() => handleCategoryClick("Category 10")}>
+          <li onClick={() => handleCategoryClick("Category 10")} style={{ color: 'black', fontFamily: "Roboto-regular", fontSize: '20px', margin: '20px' }}>
             CERTIFICATION OF COMPLIANCE
               {selectedCategory === "Category 10" && (
                 <ul>
@@ -246,7 +246,7 @@ const Transparency = () => {
                 </ul>
               )}
           </li>
-          <li onClick={() => handleCategoryClick("Category 11")}>
+          <li onClick={() => handleCategoryClick("Category 11")} style={{ color: 'black', fontFamily: "Roboto-regular", fontSize: '20px', margin: '20px' }}>
             PHILGEPS POSTING
               {selectedCategory === "Category 11" && (
                 <ul>
@@ -258,7 +258,7 @@ const Transparency = () => {
                 </ul>
               )}
           </li>
-          <li onClick={() => handleCategoryClick("Category 12")}>
+          <li onClick={() => handleCategoryClick("Category 12")} style={{ color: 'black', fontFamily: "Roboto-regular", fontSize: '20px', margin: '20px' }}>
             PROCUREMENT MONITORING REPORTS
               {selectedCategory === "Category 12" && (
                 <ul>
@@ -271,7 +271,7 @@ const Transparency = () => {
                 </ul>
               )}
           </li>
-          <li onClick={() => handleCategoryClick("Category 13")}>
+          <li onClick={() => handleCategoryClick("Category 13")} style={{ color: 'black', fontFamily: "Roboto-regular", fontSize: '20px', margin: '20px' }}>
              ARTA COMPLIANCE 
               {selectedCategory === "Category 13" && (
                 <ul>
@@ -290,7 +290,7 @@ const Transparency = () => {
                 </ul>
               )}
           </li>
-          <li onClick={() => handleCategoryClick("Category 14")}>
+          <li onClick={() => handleCategoryClick("Category 14")} style={{ color: 'black', fontFamily: "Roboto-regular", fontSize: '20px', margin: '20px' }}>
             SALN SUBMISSION/FILING 
               {selectedCategory === "Category 14" && (
                 <ul>
@@ -303,7 +303,7 @@ const Transparency = () => {
                 </ul>
               )}
           </li>
-          <li onClick={() => handleCategoryClick("Category 15")}>
+          <li onClick={() => handleCategoryClick("Category 15")} style={{ color: 'black', fontFamily: "Roboto-regular", fontSize: '20px', margin: '20px' }}>
             OFFICE OF THE BOARD OF DIRECTORS 
               {selectedCategory === "Category 15" && (
                 <ul>

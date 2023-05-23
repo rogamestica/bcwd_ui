@@ -25,14 +25,15 @@ const ConnectWithUs = () => {
                   <Header1 header="CONNECT WITH US" className="fs-4" />
                 </div>
                 <div className="col-12 d-flex justify-content-center">
+                <a href="https://www.facebook.com/profile.php?id=100064300855367">
                   <img
                     className="m-2"
                     src={facebook}
                     alt="fb"
-                    href="https://www.facebook.com/profile.php?id=100064300855367"
                     width="40"
                     height="40"
                   />
+                </a>
                   <img
                     className="m-2"
                     src={twitter}

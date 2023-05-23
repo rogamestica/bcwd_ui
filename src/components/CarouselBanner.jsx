@@ -9,22 +9,22 @@ import img4 from '../static/img/carousel_banner_img/4.png'
 const CarouselBanner = () => {
     const carouselInfo = [
         {
-            title: "First Banner",
+            title: "",
             images: img1,
             description: "This is a description of 1st banner",
         },
         {
-            title: "Second Banner",
+            title: "",
             images: img2,
             description: "This is a description of 2nd banner",
         },
         {
-            title: "Third Banner",
+            title: "",
             images: img3,
             description: "This is a description of 3rd banner",
         },
         {
-            title: "Fourth Banner",
+            title: "",
             images: img4,
             description: "This is a description of 4th banner",
         },

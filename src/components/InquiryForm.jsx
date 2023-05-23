@@ -77,30 +77,30 @@ const InquiryForm = () => {
             </form>
           ) : (
             <div>
-              <p style={{ fontFamily: 'Roboto', fontSize: '20px', fontWeight: 'bold', marginTop: '20px' }}>
+              <p style={{ fontFamily: 'Roboto', fontSize: '25px', fontWeight: 'bold', marginTop: '20px' }}>
                 Subject: Water District Inquiry
               </p>
-              <p>
-                Dear {accountName},
+              <p style={{ fontFamily: 'Roboto-Light', fontSize: '20px', marginTop: '18px' }}>
+                Dear Customer,
               </p>
-              <p>
-                Thank you for your inquiry regarding {message}. We appreciate your interest in our water district.
+              <p style={{ fontFamily: 'Roboto-Light', fontSize: '20px', marginTop: '18px' }}>
+                Thank you for your inquiry. We appreciate your interest in our water district.
               </p>
-              <p>
+              <p style={{ fontFamily: 'Roboto-Light', fontSize: '20px', marginTop: '18px' }}>
                 We are currently reviewing your inquiry and will provide a prompt response shortly.
               </p>
-              <p>
+              <p style={{ fontFamily: 'Roboto-Light', fontSize: '20px', marginTop: '18px' }}>
                 If you have any further questions or concerns, please feel free to contact our customer service team by calling the phone number 0918 930 4234 or telephone number 342-3145, 341-6375.
               </p>
-              <p>
+              <p style={{ fontFamily: 'Roboto-Light', fontSize: '20px', marginTop: '18px' }}>
                 Thank you for your patience.
               </p>
-              <p>
+              <p style={{ fontFamily: 'Roboto-Light', fontSize: '20px', marginTop: '18px' }}>
                 Best regards,
               </p>
-              <p>Rogamestica Pascual</p>
-              <p>  CEO </p>
-              <p>  Butuan City Water District Name</p>
+              <p style={{ fontFamily: 'Roboto-Light', fontSize: '20px',fontWeight: 'bold', marginTop: '25px' }}>Rogamestica Pascual</p>
+              <p style={{ fontFamily: 'Roboto-Light', fontSize: '20px', marginTop: '18px' }}>  CEO </p>
+              <p style={{ fontFamily: 'Roboto-Light', fontSize: '20px', marginTop: '18px' }}>  Butuan City Water District Name</p>
               
             </div>
           )}

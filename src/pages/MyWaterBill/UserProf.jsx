@@ -4,6 +4,7 @@ import Breadcrumb from "../../components/Breadcrumb";
 import { Container } from 'react-bootstrap';
 import BillsPaymentPartners from '../bills_payments/BillsPaymentPartners';
 import PersonalInfo from './PersonalInfo';
+import Account from './Account';
 
 const WaterBill = () => {
   const [isSignedIn, setIsSignedIn] = useState(false);
@@ -17,7 +18,9 @@ const WaterBill = () => {
   };
 
   const handleBackPersonalInfo=() =>{
-    window.location.href = {PersonalInfo};
+    setIsSignedIn(false);
+    setShowPopup(false);
+    setIsSignOutClicked(false);
   }
 
   const handleSignIn = () => {
@@ -39,19 +42,6 @@ const WaterBill = () => {
     setShowPopup(false);
   };
 
-
-  const Accountnumber = () => {
-    const accountnumber = "1234345678";
-    const name = "John Doe";
-
-    return (
-      <div style={{fontSize: "10px", fontFamily: "Roboto"}}>
-        <h2> Account Information</h2>
-        <p>Account Number: {accountnumber}</p>
-        <p>Account Name: {name}</p>
-      </div>
-    )
-  }
 
   const SignInForm = ({ onSignIn, setShowPopup }) => {
     const handleSignIn = () => {
@@ -133,15 +123,15 @@ const WaterBill = () => {
                 <h2 style={{ color: "blue", fontWeight: "bold" }}>
                   Welcome, BCWD Customers!
                 </h2>
-                <Accountnumber />
+                <Account/>
                 <div>
-                  <p>Your water bill: {waterBill}</p>
+                  <p style={{ marginTop: "10px", marginBottom: "50px",  color: 'black'}}>Your water bill: {waterBill}</p>
                   <button onClick={handleSignOut}>Sign Out</button>
-                  <button type="button" href='/personalinfo'  onClick={handleBackPersonalInfo}> Back</button>
+                  <button type="button" href='/personalinfo' onClick={handleBackPersonalInfo}> Back</button>
                 </div>
                 <div>
-                  <h1 style={{ marginTop: "10px", marginBottom: "30px" }}>You can pay online.</h1>
-                  <p style={{ marginTop: "10px", marginBottom: "50px" }}>
+                  <h1 style={{ marginTop: "10px", marginBottom: "30px", color: 'black' }}>You can pay online.</h1>
+                  <p style={{ marginTop: "10px", marginBottom: "50px",  color: 'black'}}>
                     Click: {' '}
                     <a href='/billspaymentpartners' onClick={handleLinkClick}>
                       Bill Payment Partners
