@@ -1,6 +1,34 @@
 import Table from 'react-bootstrap/Table';
+import React, { useEffect } from 'react';
 
 const MyTable = () => {
+
+  useEffect(() => {
+    const loadFonts = async () => {
+      try {
+        const robotoRegular = new FontFace(
+          'Roboto-regular',
+          `url(${require('../static/roboto-font/Roboto-Regular.ttf')}) format('truetype')`
+        );
+        await robotoRegular.load();
+        document.fonts.add(robotoRegular);
+
+        const robotoLight = new FontFace(
+          'Roboto-light',
+          `url(${require('../static/roboto-font/Roboto-Light.ttf')}) format('truetype')`
+        );
+        await robotoLight.load();
+        document.fonts.add(robotoLight);
+
+        document.body.style.fontFamily = 'Roboto-regular, Roboto-light';
+      } catch (error) {
+        console.error('Failed to load font:', error);
+      }
+    };
+
+    loadFonts();
+  }, []);
+
   return (
     <Table striped bordered hover responsive >
       <tbody>

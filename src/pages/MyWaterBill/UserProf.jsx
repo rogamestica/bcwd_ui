@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import Banner from "../../components/Banner";
-import Breadcrumb from "../../components/Breadcrumb";
-import { Container } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import BillsPaymentPartners from '../bills_payments/BillsPaymentPartners';
 import PersonalInfo from './PersonalInfo';
 import Account from './Account';
+import BillingHistory from './BillingHistory';
 
 const WaterBill = () => {
   const [isSignedIn, setIsSignedIn] = useState(false);
@@ -17,16 +16,16 @@ const WaterBill = () => {
     window.location.href = { BillsPaymentPartners };
   };
 
-  const handleBackPersonalInfo=() =>{
+  const handleBackPersonalInfo = () => {
     setIsSignedIn(false);
     setShowPopup(false);
     setIsSignOutClicked(false);
-  }
+  };
 
   const handleSignIn = () => {
     setIsSignedIn(true);
     // Simulate fetching the water bill data (replace with your own logic)
-    setWaterBill('$100');
+    setWaterBill('Php 1 210');
     setShowPopup(false);
   };
 
@@ -38,10 +37,9 @@ const WaterBill = () => {
     window.location.reload(); // Refresh the page
   };
 
-  const handlePopupClose = () => {
-    setShowPopup(false);
-  };
-
+  // const handlePopupClose = () => {
+  //   setShowPopup(false);
+  // };
 
   const SignInForm = ({ onSignIn, setShowPopup }) => {
     const handleSignIn = () => {
@@ -51,9 +49,21 @@ const WaterBill = () => {
 
     return (
       <div>
-        <h2>Sign In</h2>
-        <form style={{ marginBottom: "50px" }}>
-          <button type="button" onClick={handleSignIn}>
+        <form style={{ display: 'flex', justifyContent: 'center' }}>
+          <button
+            type="button"
+            onClick={handleSignIn}
+            style={{
+              padding: '10px 20px',
+              background: '#27AE60',
+              color: 'white',
+              border: 'none',
+              borderRadius: '4px',
+              cursor: 'pointer',
+              fontSize: '16px',
+              fontWeight: 'bold',
+            }}
+          >
             Display my water bill
           </button>
         </form>
@@ -62,82 +72,97 @@ const WaterBill = () => {
   };
 
   return (
-    <Container className="mt-4" style={{ height: '100vh', overflow: 'auto' }}>
+    <Container >
       <div>
         {!isSignedIn || isSignOutClicked ? (
           <>
-            <div
-              className="position-fixed w-100 h-100"
-              style={{
-                top: 0,
-                left: 0,
-                backgroundColor: "rgba(0, 0, 0, 0.5)",
-                backdropFilter: "blur(8px)",
-                zIndex: 9999,
-              }}
-            >
-              <Container className="position-relative"
-                style={{ zIndex: 10000, background: "white", marginTop: "40px", marginBottom: "40px", height: '100%', overflow: 'auto' }}>
-                <Banner title={"User Profile"} />
-                <Breadcrumb
-                  paths={[
-                    { name: "Home", url: "/" },
-                    { name: "User Profile", url: "/userprof" },
-                  ]}
-                />
-                <PersonalInfo />
-                <SignInForm onSignIn={handleSignIn} setShowPopup={setShowPopup} />
-                {showPopup && (
-                  <div className="popup">
-                    <div className="popup-content">
-                      <span className="close" onClick={handlePopupClose}>
-                        &times;
-                      </span>
-                      <p>Please sign in to continue.</p>
-                    </div>
-                  </div>
-                )}
+               <Container fluid className="mt-4" style={{ Height: '100vh' }}>
+                <Row>
+                  <Col xs={12} md={6} className="mb-4 d-flex justify-content-start">
+                    <Container>
+                      <PersonalInfo />
+                      <SignInForm onSignIn={handleSignIn} setShowPopup={setShowPopup} />
+                    </Container>
+                  </Col>
+                  <Col xs={12} md={6} className="mb-4 d-flex justify-content-end">
+                    <BillingHistory />
+                  </Col>
+                </Row>
               </Container>
-            </div>
           </>
         ) : (
           <>
-            <div
-              className="position-fixed w-100 h-100"
-              style={{
-                top: 0,
-                left: 0,
-                backgroundColor: "rgba(0, 0, 0, 0.5)",
-                backdropFilter: "blur(8px)",
-                zIndex: 9999,
-              }}
-            >
-              <Container className="position-relative"
-                 style={{ zIndex: 10000, background: "white", marginTop: "40px", marginBottom: "40px", height: '100%', overflow: 'auto' }}>
-                <Banner title={"User Profile"} />
-                <Breadcrumb
-                  paths={[
-                    { name: "Home", url: "/" },
-                    { name: "User Profile", url: "/userprof" },
-                  ]} />
-                <h2 style={{ color: "blue", fontWeight: "bold" }}>
-                  Welcome, BCWD Customers!
-                </h2>
-                <Account/>
-                <div>
-                  <p style={{ marginTop: "10px", marginBottom: "50px",  color: 'black'}}>Your water bill: {waterBill}</p>
-                  <button onClick={handleSignOut}>Sign Out</button>
-                  <button type="button" href='/personalinfo' onClick={handleBackPersonalInfo}> Back</button>
+            <div>
+              <Container
+                className="position-relative text-start"
+                style={{
+                  zIndex: 10000,
+                  background: "white",
+                  marginTop: "100px",
+                  marginBottom: "40px",
+                  height: '80%',
+                  overflow: 'auto',
+                  padding: '20px',
+                  fontFamily: 'Arial, sans-serif',
+                  fontSize: '14px',
+                  lineHeight: '1.6',
+                  color: '#333333',
+                  maxWidth: '600px',
+                  boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)',
+                  borderRadius: '4px',
+                }}
+              >
+                <div style={{margin: '50px'}}>
+                <Account />
+                <div style={{ marginTop: '20px' }}>
+                  <p style={{ color: '#777777', fontSize: '30px' }}>Your water bill: {waterBill}</p>
                 </div>
-                <div>
-                  <h1 style={{ marginTop: "10px", marginBottom: "30px", color: 'black' }}>You can pay online.</h1>
+                <div style={{ marginTop: '30px' }}>
+                  <h1 style={{ color: '#333333', fontWeight: 'bold', fontSize: '24px' }}>
+                    You can pay online.
+                  </h1>
+                  <p style={{ color: '#777777', marginBottom: '20px', fontSize: '15px' }}>
+                    To make a payment, please click the link below to proceed to our
+                    payment partners.
+                  </p>
                   <p style={{ marginTop: "10px", marginBottom: "50px",  color: 'black'}}>
                     Click: {' '}
                     <a href='/billspaymentpartners' onClick={handleLinkClick}>
                       Bill Payment Partners
                     </a>
                   </p>
-                </div>
+                </div> </div>
+                <div style={{ marginTop: '20px', display: 'flex', justifyContent: 'space-between' }}>
+                <a
+                  href='#'
+                  onClick={handleBackPersonalInfo}
+                  style={{
+                    color: '#0275D8',
+                    textDecoration: 'underline',
+                    fontSize: '16px',
+                    fontWeight: 'bold',
+                    marginLeft: '20px',
+                    marginTop: '100px'
+                  }}
+                >
+                  Back
+                </a>
+                <a
+                  href="/"
+                  onClick={handleSignOut}
+                  style={{
+                    color: '#C82333',
+                    textDecoration: 'underline',
+                    fontSize: '16px',
+                    fontWeight: 'bold',
+                    marginRight: '20px',
+                    marginTop: '100px'
+                  }}
+                >
+                  Sign Out
+                </a>
+              </div>
+
               </Container>
             </div>
           </>

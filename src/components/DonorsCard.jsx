@@ -1,14 +1,22 @@
 import Card from 'react-bootstrap/Card';
-import Image from '../static/img/donor.png';
 import ButtonWAS from './ButtonWAS';
+import Image from '../static/img/donor.png';
 
 const DonorsCard = () => {
   return (
     <div className='container p-4 py-5'>
-      <Card className='donorscard py-4'>
-       <Card.Img variant="top" src={Image} className="bidding-border-image" />
+      <Card className='donorscard' style={{ padding: 0 }}>
+        <Card.Img
+          variant="top"
+          src={Image}
+          className="bidding-border-image"
+          style={{ width: '100%', height: '100%', objectFit: 'cover', outline: 'transparent' }}
+        />
+        {/* Add any other content or Card components here */}
       </Card>
-      <ButtonWAS mylink='#' name='READ MORE...' />
+      <div  style={{marginTop: '20px'}}>
+      <ButtonWAS mylink='#' name='READ MORE...'/>
+      </div>
     </div>
   );
 };

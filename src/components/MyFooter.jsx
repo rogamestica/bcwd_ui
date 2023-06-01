@@ -56,11 +56,11 @@ const MyFooter = () => {
                             <div className='row py-2'>
                                 <div className='col-lg-8' >
                                     
-                                     <Link className='footer' to="serviceadvisories"><p style={{color: 'white'}}>Service Advisories</p></Link>
-                                     <Link className='footer' to="."><p style={{color: 'white'}}>How to your Water Bill</p></Link>
-                                     <Link className='footer' to="billspaymentpartners"><p style={{color: 'white'}}>Bills Payment Partners</p></Link>
-                                     <Link className='footer' to="faqs"><p style={{color: 'white'}}>FAQs</p></Link>
-                                     <Link className='footer' to="contactus"><p style={{color: 'white'}}>Contact Us</p></Link>
+                                     <Link className='footer text-decoration-none' to="serviceadvisories"><p style={{color: 'white'}}>Service Advisories</p></Link>
+                                     <Link className='footer text-decoration-none' to="."><p style={{color: 'white'}}>How to your Water Bill</p></Link>
+                                     <Link className='footer text-decoration-none' to="billspaymentpartners"><p style={{color: 'white'}}>Bills Payment Partners</p></Link>
+                                     <Link className='footer text-decoration-none' to="faqs"><p style={{color: 'white'}}>FAQs</p></Link>
+                                     <Link className='footer text-decoration-none' to="contactus"><p style={{color: 'white'}}>Contact Us</p></Link>
                                     
                                 </div>
                             </div>

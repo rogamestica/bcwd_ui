@@ -54,16 +54,17 @@ const BillsPaymentPartners = () => {
           ]}
         />
 
-        <Row className="justify-content-center">
+        <Row >
           <Col xs={12} md={6}>
             <div className="border-blue p-3 m-2">
-              <p style={{ color: 'black', fontFamily: "Roboto Regular", fontSize: '20px', marginTop: '10px'}}>You can pay Via:</p>
+              <p className=" text-start" style={{ color: 'black', fontFamily: "Roboto Regular", fontSize: '20px', marginTop: '10px', marginLeft: '30px'}}>You can pay Via:</p>
+              <div className="jusify-content-center">
               <img
                 src={Picture11}
                 alt="bill"
                 className="img-fluid clickable "
                 onClick={() => handleImageClick(Gcash)}
-                style={{ marginRight: '10px' }}
+                style={{ marginRight: '100px' }}
               />
               <img
                 src={Picture12}
@@ -72,6 +73,7 @@ const BillsPaymentPartners = () => {
                 onClick={() => handleImageClick(Paymaya)}
                 style={{ marginLeft: '10px' }}
               />
+              </div>
             </div>
           </Col>
         </Row>

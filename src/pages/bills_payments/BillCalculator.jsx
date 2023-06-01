@@ -21,8 +21,6 @@ const WaterBillCalculator = () => {
       });
   }, []);
 
-
-
   const [consumption, setConsumption] = useState(0);
   const [totalAmount, setTotalAmount] = useState(0);
   const [cubicMeter, setCubicMeter] = useState(true);

@@ -1,19 +1,22 @@
-import React, { useState } from 'react';
-
-import noimg from '../../static/img/no-image.png';
 import Table from '../../components/Table';
+import profile from '../../static/svg/profile.svg';
 
 const PersonalInfo = () => {
-    // Simulated anonymous personal information
-    const imageUrl = noimg;
-
-    return (
-      <div style={{ textAlign: "left", marginLeft: "30px", fontSize: "50px" }}>
-        <h2>Personal Information</h2>
-        {imageUrl && <img src={imageUrl} alt="Customer" style={{ width: '200px', height: '200px' }} />}
-        <Table />
+  return (
+    <div className="container">
+      <h2 className="text-center mt-5">Personal Information</h2>
+      <div className="mt-5 mb-3 d-flex justify-content-center">
+        <img
+          className="rounded-circle"
+          src={profile}
+          alt="profile"
+          width="120"
+          height="120"
+        />
       </div>
-    );
-  };
+      <Table />
+    </div>
+  );
+};
 
 export default PersonalInfo;

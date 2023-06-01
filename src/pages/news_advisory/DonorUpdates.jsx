@@ -37,6 +37,12 @@ const DonorUpdates = () => {
           <Col>
             <DonorsCard />
           </Col>
+          <Col>
+            <DonorsCard />
+          </Col>
+          <Col>
+            <DonorsCard />
+          </Col>
         </Row>
       </Container>
       <Pagination />
