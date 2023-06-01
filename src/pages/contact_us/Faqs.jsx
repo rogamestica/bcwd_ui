@@ -1,13 +1,41 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import Banner from '../../components/Banner';
 import Breadcrumb from '../../components/Breadcrumb';
 import Pagination from '../../components/Pagination';
 
 const Faqs = () => {
+  useEffect(() => {
+    const loadFonts = async () => {
+      try {
+        const robotoRegular = new FontFace(
+          'Roboto-regular',
+          `url(${require('../../static/roboto-font/Roboto-Regular.ttf')}) format('truetype')`
+        );
+        await robotoRegular.load();
+        document.fonts.add(robotoRegular);
+
+        const robotoLight = new FontFace(
+          'Roboto-light',
+          `url(${require('../../static/roboto-font/Roboto-Light.ttf')}) format('truetype')`
+        );
+        await robotoLight.load();
+        document.fonts.add(robotoLight);
+
+        document.body.style.fontFamily = 'Roboto-regular, Roboto-light';
+      } catch (error) {
+        console.error('Failed to load font:', error);
+      }
+    };
+
+    loadFonts();
+  }, []);
+
   const [selected, setSelected] = useState(null);
 
   const handleSelect = (index) => {
+
+
     if (selected === index) {
       setSelected(null);
     } else {
@@ -16,11 +44,11 @@ const Faqs = () => {
   };
 
   const questions = [
-    'NGANONG WALA MAN KO KADAWAT SA AKONG WATER BILL?',
-    'NGANONG MOPULA MAN DAYON ANG WATER BILL BISAN GAMAY RA ANG BAYRONON?',
-    'NGANONG DILI MANANGHID KUNG MAGPUTOL NA SA TUBIG?',
-    'NGANONG ALISDAN ANG AKONG METRO KUNG KINI MOABOT NA OG LIMA (5) KA TUIG?',
-    'PWEDE BA SA AKONG TUGKARAN RA IBUTANG ANG AKONG WATER METER?',
+    'Nganong wala man ko kadawat sa akong water bill?',
+    'Nganong mopula man dayon ang water bill bisan gamay ra ang bayrunon?',
+    'Nganong dili mananghid kung magputol na sa tubig?',
+    'Nganong alisdan ang akong metro kung kini moabot na og lima (5) ka tuig?',
+    'Pwede ba sa akong tugkaran ra ibutang ang akong water meter',
   ];
 
   const answers = [
@@ -51,6 +79,7 @@ const Faqs = () => {
                 padding: '10px',
                 marginBottom: '10px',
                 width: '100%',
+                marginTop:'30px'
               }}
             >
               <div
@@ -80,7 +109,10 @@ const Faqs = () => {
                     transition: 'transform 0.3s ease-in-out',
                   }}
                 >
-                  V
+                  <svg width="25" height="19" viewBox="0 0 35 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M19.5591 18.205C18.4202 19.265 16.5707 19.265 15.4318 18.205L0.85416 4.63658C-0.284718 3.57655 -0.284718 1.85505 0.85416 0.795023C1.99304 -0.265009 3.84258 -0.265009 4.98145 0.795023L17.5 12.4469L30.0185 0.803503C31.1574 -0.256527 33.007 -0.256527 34.1458 0.803503C35.2847 1.86353 35.2847 3.58503 34.1458 4.64506L19.5682 18.2135L19.5591 18.205Z" fill="#7B7A7A"/>
+                  </svg>
+
                 </div>
               </div>
               {selected === index && (
